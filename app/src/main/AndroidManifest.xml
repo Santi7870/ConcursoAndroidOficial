@@ -12,6 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyElegantApp">
 
+        <!-- Registrar como administrador del dispositivo -->
+        <meta-data
+            android:name="android.app.device_admin"
+            android:resource="@xml/device_admin_sample" />
+
+        <!-- Servicio de administrador del dispositivo -->
+        <service
+            android:name=".MyAdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="false"> <!-- Agregar esta línea para declarar el servicio -->
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+        </service>
+
         <!-- Actividad Principal -->
         <activity
             android:name=".WelcomeActivity"
@@ -30,6 +49,8 @@
         <activity android:name=".HomeActivity" android:exported="true" />  <!-- Asegúrate de que esta línea esté presente -->
 
     </application>
+
 </manifest>
+
 
 

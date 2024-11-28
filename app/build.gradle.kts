@@ -54,6 +54,11 @@ dependencies {
     implementation(libs.androidx.appcompat) // Alias desde libs.versions.toml
     implementation(libs.androidx.core.ktx) // Alias desde libs.versions.toml
 
+    // Dependencias Retrofit y OkHttp
+    implementation(libs.retrofit)
+    implementation(libs.retrofit-gson-converter)
+    implementation(libs.okhttp-logging-interceptor)
+
     // Dependencias para pruebas
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -63,5 +68,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
 
 

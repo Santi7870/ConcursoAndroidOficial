@@ -15,6 +15,16 @@
         android:textSize="18sp"
         android:gravity="center"
         android:layout_marginBottom="20dp"/>
+    <TextView
+        android:id="@+id/tvLockStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado de bloqueo: No bloqueado"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
 
     <!-- Botón redondo azul para bloquear -->
     <Button
