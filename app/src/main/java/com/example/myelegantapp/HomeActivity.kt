@@ -23,6 +23,8 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var btnBlock: Button
     private lateinit var btnUnblock: Button
     private lateinit var tvWelcomeMessage: TextView
+    private lateinit var tvUserName: TextView
+
     private lateinit var tvLockStatus: TextView  // Nuevo TextView para mostrar la hora de bloqueo/desbloqueo
     private lateinit var devicePolicyManager: DevicePolicyManager
     private var isBlocked = false  // Variable para saber si la app está bloqueada
@@ -35,6 +37,8 @@ class HomeActivity : AppCompatActivity() {
         btnBlock = findViewById(R.id.btnBlock)
         btnUnblock = findViewById(R.id.btnUnblock)
         tvWelcomeMessage = findViewById(R.id.tvWelcomeMessage)
+        tvUserName = findViewById(R.id.tvUserName)
+
         tvLockStatus = findViewById(R.id.tvLockStatus)  // Referencia al nuevo TextView
 
         // Inicializar el administrador de dispositivos
@@ -43,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
         // Obtener datos de la intención
         val userName = intent.getStringExtra("USER_NAME") ?: "Juan"
         val userLastName = intent.getStringExtra("USER_LASTNAME") ?: "Pérez"
-        tvWelcomeMessage.text = "Welcome, $userName $userLastName!"
+        tvUserName.text = "$userName $userLastName!"
 
         // Establecer el comportamiento del botón "Bloquear"
         btnBlock.setOnClickListener {
