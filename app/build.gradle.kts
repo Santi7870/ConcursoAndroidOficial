@@ -51,13 +51,11 @@ dependencies {
     implementation(libs.androidx.material3)
 
     // Dependencias para AppCompatActivity y vistas tradicionales
-    implementation(libs.androidx.appcompat) // Alias desde libs.versions.toml
-    implementation(libs.androidx.core.ktx) // Alias desde libs.versions.toml
+    implementation(libs.androidx.appcompat)
 
     // Dependencias Retrofit y OkHttp
-    implementation(libs.retrofit)
-    implementation(libs.retrofit-gson-converter)
-    implementation(libs.okhttp-logging-interceptor)
+    implementation(libs.retrofit) // Alias para Retrofit desde libs.versions.toml
+    implementation(libs.retrofit.converter.gson) // Alias para Converter Gson desde libs.versions.toml
 
     // Dependencias para pruebas
     testImplementation(libs.junit)
@@ -68,6 +66,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
 
 
 

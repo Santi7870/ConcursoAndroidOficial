@@ -2,8 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myelegantapp">
 
+    <!-- Permiso para usar Internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
     <application
-        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+
+    android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -12,24 +18,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyElegantApp">
 
-        <!-- Registrar como administrador del dispositivo -->
-        <meta-data
-            android:name="android.app.device_admin"
-            android:resource="@xml/device_admin_sample" />
+        <receiver android:name=".AdminReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.admin"
+                android:resource="@xml/device_admin_sample" />
+        </receiver>
 
-        <!-- Servicio de administrador del dispositivo -->
+
+        <!-- Declaración del servicio de administrador de dispositivos -->
+
         <service
-            android:name=".MyAdminReceiver"
+            android:name=".AdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN"
-            android:exported="false"> <!-- Agregar esta línea para declarar el servicio -->
-            <intent-filter>
-                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
-            </intent-filter>
 
+        android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.myelegantapp.SOME_ACTION"/>
+            </intent-filter>
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/device_admin_sample" />
         </service>
+
 
         <!-- Actividad Principal -->
         <activity
@@ -46,11 +58,14 @@
         <!-- Otras Actividades -->
         <activity android:name=".RegisterActivity" android:exported="true" />
         <activity android:name=".LoginActivity" android:exported="true" />
-        <activity android:name=".HomeActivity" android:exported="true" />  <!-- Asegúrate de que esta línea esté presente -->
+        <activity android:name=".HomeActivity" android:exported="true" />
 
     </application>
 
 </manifest>
+
+
+
 
 
 

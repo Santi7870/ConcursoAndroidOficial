@@ -9,6 +9,10 @@ lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2024.04.01"
 appcompat = "1.6.1"
+retrofit = "2.9.0"
+okhttp = "4.9.0"
+gson = "2.8.8"
+
 
 
 [libraries]
@@ -29,9 +33,9 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 
 # Dependencias Retrofit y OkHttp
-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version = "2.9.0" }
-retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version = "2.9.0" }
-okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version = "4.9.3" }
+retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+retrofit-converter-gson = "com.squareup.retrofit2:converter-gson:2.9.0"
+okhttp = "com.squareup.okhttp3:okhttp:4.9.0"
 
 
 
