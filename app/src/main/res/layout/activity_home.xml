@@ -1,53 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp">
 
-    <!-- Mensaje de bienvenida -->
-    <TextView
-        android:id="@+id/tvWelcomeMessage"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome!"
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"/>
-    <TextView
-        android:id="@+id/tvLockStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Estado de bloqueo: No bloqueado"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:orientation="vertical"
+        android:gravity="top|center_horizontal">
+
+        <!-- Contenedor horizontal para el logo y el título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="40dp">
+
+            <!-- Logo de SecureExamen -->
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/secure_examen_logo"/>
+
+            <!-- Título con el texto SecureExamen -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SecureExamen"
+                android:textSize="24sp"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Mensaje de bienvenida -->
+        <TextView
+            android:id="@+id/tvWelcomeMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome!"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Estado de bloqueo -->
+        <TextView
+            android:id="@+id/tvLockStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado de bloqueo: No bloqueado"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Botón para bloquear -->
+        <Button
+            android:id="@+id/btnBlock"
+            android:layout_width="215dp"
+            android:layout_height="215dp"
+            android:background="@drawable/buttonlock"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Botón para desbloquear -->
+        <Button
+            android:id="@+id/btnUnblock"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/buttonunlock"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Logo de la UDLA -->
+        <ImageView
+            android:id="@+id/ivUdlalogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/udla_logo"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="UDLA Logo"/>
+    </LinearLayout>
+</ScrollView>
 
 
-    <!-- Botón redondo azul para bloquear -->
-    <Button
-        android:id="@+id/btnBlock"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:backgroundTint="@color/black"
-        android:text="BLOCK"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="20dp"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <!-- Botón redondo azul para desbloquear -->
-    <Button
-        android:id="@+id/btnUnblock"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="UNBLOCK"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:visibility="gone"
-        android:layout_gravity="center"/>
-</LinearLayout>
 
